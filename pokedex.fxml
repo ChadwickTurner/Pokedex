@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.PokedexController">
+   <left>
+      <VBox prefHeight="750.0" prefWidth="226.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="sortButton" mnemonicParsing="false" onAction="#sortByName" text="Sort by Name" />
+            <Button mnemonicParsing="false" onAction="#sortByNumber" text="Sort by Number" />
+            <Button mnemonicParsing="false" onAction="#sortByHP" text="Sort by HP" />
+            <Button mnemonicParsing="false" onAction="#sortByATK" text="Sort by Attack" />
+            <Button mnemonicParsing="false" onAction="#sortByDEF" text="Sort by Defense" />
+            <Button mnemonicParsing="false" onAction="#sortBySPA" text="Sort by Special Attack" />
+            <Button mnemonicParsing="false" onAction="#sortBySPD" text="Sort by Special Defense" />
+            <Button mnemonicParsing="false" onAction="#sortBySPE" text="Sort by Speed" />
+            <Button mnemonicParsing="false" onAction="#sortByT0T" text="Sort by Total Base Stats" />
+            <Button mnemonicParsing="false" onAction="#sortByAVG" text="Sort by Average Base Stats" />
+            <ChoiceBox fx:id="typeBox" prefWidth="150.0" />
+            <ChoiceBox fx:id="type2Box" prefWidth="150.0" />
+            <CheckBox fx:id="fullyEvolvedBox" mnemonicParsing="false" text="Fully Evolved" />
+            <CheckBox fx:id="megaEvoBox" mnemonicParsing="false" text="Has Mega Evolution" />
+            <ChoiceBox fx:id="generationBox" prefWidth="150.0" />
+         </children></VBox>
+   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <ListView fx:id="pokemonView" prefHeight="749.0" prefWidth="445.0" />
+         </children></VBox>
+   </center>
+   <right>
+      <VBox prefHeight="750.0" prefWidth="359.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane alignment="CENTER_RIGHT">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label text="Base Speed:" translateX="-10.0" GridPane.halignment="RIGHT" GridPane.rowIndex="9" />
+                  <Label alignment="CENTER_RIGHT" text="Number:" translateX="-10.0" GridPane.halignment="RIGHT" />
+                  <Label text="Base Special Defense:" translateX="-10.0" GridPane.halignment="RIGHT" GridPane.rowIndex="8" />
+                  <Label text="Base Attack:" translateX="-10.0" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
+                  <Label text="Type 2:" translateX="-10.0" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+                  <Label text="Name:" translateX="-10.0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                  <Label text="Base Special Attack:" translateX="-10.0" GridPane.halignment="RIGHT" GridPane.rowIndex="7" />
+                  <Label text="Type 1:" translateX="-10.0" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                  <Label text="Base Defense:" translateX="-10.0" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
+                  <Label text="Base HP:" translateX="-10.0" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+                  <Label text="Total Base Stats:" translateX="-10.0" GridPane.halignment="RIGHT" GridPane.rowIndex="10" />
+                  <Label text="Average Base Stats:" translateX="-10.0" GridPane.halignment="RIGHT" GridPane.rowIndex="11" />
+                  <Label fx:id="number" alignment="CENTER" text="N/A" translateX="10.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" />
+                  <Label fx:id="name" alignment="CENTER" text="N/A" translateX="10.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                  <Label fx:id="type2" alignment="CENTER" text="N/A" translateX="10.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3" />
+                  <Label fx:id="type1" alignment="CENTER" text="N/A" translateX="10.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
+                  <Label fx:id="hp" alignment="CENTER" text="N/A" translateX="10.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="4" />
+                  <Label fx:id="attack" alignment="CENTER" text="N/A" translateX="10.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="5" />
+                  <Label fx:id="defense" alignment="CENTER" text="N/A" translateX="10.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="6" />
+                  <Label fx:id="specialAttack" alignment="CENTER" text="N/A" translateX="10.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="7" />
+                  <Label fx:id="specialDefense" alignment="CENTER" text="N/A" translateX="10.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="8" />
+                  <Label fx:id="speed" alignment="CENTER" text="N/A" translateX="10.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="9" />
+                  <Label fx:id="total" alignment="CENTER" text="N/A" translateX="10.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="10" />
+                  <Label fx:id="average" alignment="CENTER" text="N/A" translateX="10.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="11" />
+               </children>
+            </GridPane>
+            <Hyperlink fx:id="serebii" alignment="CENTER" contentDisplay="CENTER" onAction="#openSerebii" text="Serebii.net" translateX="150.0" translateY="50.0" />
+            <Hyperlink fx:id="smogon" alignment="CENTER" contentDisplay="CENTER" onAction="#openSmogon" text="Smogon.com" translateX="145.0" translateY="75.0" />
+         </children></VBox>
+   </right>
+</BorderPane>
